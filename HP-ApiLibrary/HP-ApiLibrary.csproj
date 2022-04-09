@@ -8,7 +8,15 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Description>Wrapper for HP-API!</Description>
     <Copyright>https://hp-api.herokuapp.com/</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />

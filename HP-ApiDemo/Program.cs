@@ -3,7 +3,7 @@ using HP_ApiLibrary.Model;
 
 namespace HP_ApiDemo
 {
-    internal class MyClass
+    internal class Program
     {
         public static void Main()
         {
