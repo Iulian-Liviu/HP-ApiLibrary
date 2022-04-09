@@ -14,15 +14,16 @@ internal class MyClass
 {
     public static void Main()
     {
+        // follows singleton (I thinks so!)
         HPConnection? client = HPConnection.getInstance();
         var results = client.GetAllCharactersAsync().Result;
-        /*
-                    Console.WriteLine($"Writing out : {results.Count} characters names");
+       
+        Console.WriteLine($"Writing out : {results.Count} characters names");
 
-                    foreach (var ch in results)
-                    {
-                        Console.WriteLine(ch.Name);
-                    }*/
+        foreach (var ch in results)
+        {
+            Console.WriteLine(ch.Name);
+        }
 
         var gryffindor = client.GetCharactersFromHouse(HP_House.Gryffindor).Result;
 
