@@ -1,8 +1,8 @@
 # HP-ApiLibrary
 
-	A simple wrapper made for [HP-API!](https://hp-api.herokuapp.com/) thanks [Edin Beth](https://twitter.com/edinbeth) for the simple api
+A simple wrapper made for [HP-API!](https://hp-api.herokuapp.com/) thanks [Edin Beth](https://twitter.com/edinbeth) for the simple api
 
-	Is just an library that i made to learn to make wrapper and learn more, if you think i did something wrong make a PR 
+Is just an library that i made to learn to make wrapper and learn more, if you think i did something wrong make a PR 
 
 
 ## Need Code Reviews 
