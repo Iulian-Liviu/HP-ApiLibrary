@@ -9,7 +9,7 @@
 
 ### Example 
 
-	```
+	```csharp
 	internal class MyClass
     {
         public static void Main()
@@ -33,4 +33,4 @@
             }
         }
     }
-	```
+    ```	
