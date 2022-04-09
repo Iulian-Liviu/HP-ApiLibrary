@@ -36,9 +36,10 @@ internal class MyClass
             Console.WriteLine(ch.Name);
         }
         // it should throw any exception but it dosen't know so use try/catch
-        try(
+        try{
+        
+        }
 
-        )
         catch(Exception e){
 
         }
