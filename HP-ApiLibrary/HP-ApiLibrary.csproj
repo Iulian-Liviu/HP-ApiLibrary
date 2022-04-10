@@ -4,11 +4,12 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>HPApiLibrary</RootNamespace>
     <Nullable>enable</Nullable>
-    <Version>1.0.4</Version>
+    <Version>1.0.3</Version>
     <Authors>Julian</Authors>
     <PackageProjectUrl>https://github.com/Iulian-Liviu/HP-ApiLibrary</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Iulian-Liviu/HP-ApiLibrary</RepositoryUrl>
     <Description>Wrapper for HP-API , this version is for mobile.</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
