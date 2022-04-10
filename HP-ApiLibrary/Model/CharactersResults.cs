@@ -2,11 +2,11 @@
 //
 // To parse this JSON data, add NuGet 'Newtonsoft.Json' then do:
 //
-//    using HP_ApiLibrary.Model;
+//    using HPApiLibrary.Model;
 //
-//    var charactersResult = CharactersResult.FromJson(jsonString);
+//    var charactersResults = CharactersResults.FromJson(jsonString);
 
-namespace HP_ApiLibrary.Model
+namespace HPApiLibrary.Model
 {
     using System;
     using System.Collections.Generic;
@@ -127,12 +127,12 @@ namespace HP_ApiLibrary.Model
 
     public partial class CharactersResults
     {
-        public static List<CharactersResults> FromJson(string json) => JsonConvert.DeserializeObject<List<CharactersResults>>(json, HP_ApiLibrary.Model.Converter.Settings);
+        public static List<CharactersResults> FromJson(string json) => JsonConvert.DeserializeObject<List<CharactersResults>>(json, HPApiLibrary.Model.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this List<CharactersResults> self) => JsonConvert.SerializeObject(self, HP_ApiLibrary.Model.Converter.Settings);
+        public static string ToJson(this List<CharactersResults> self) => JsonConvert.SerializeObject(self, HPApiLibrary.Model.Converter.Settings);
     }
 
     internal static class Converter

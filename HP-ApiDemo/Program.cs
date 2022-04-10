@@ -1,5 +1,5 @@
-﻿using HP_ApiLibrary;
-using HP_ApiLibrary.Model;
+﻿using HPApiLibrary;
+using HPApiLibrary.Model;
 
 namespace HP_ApiDemo
 {
@@ -7,22 +7,22 @@ namespace HP_ApiDemo
     {
         public static void Main()
         {
-            HPConnection? client = HPConnection.getInstance();
-            var results = client.GetAllCharactersAsync().Result;
-            /*
-                        Console.WriteLine($"Writing out : {results.Count} characters names");
+            //Creates the connection 
+            HPConnection HpConnection = new HPConnection();
 
-                        foreach (var ch in results)
-                        {
-                            Console.WriteLine(ch.Name);
-                        }*/
+            // Get all Characters from the movie
+            var r = HpConnection.GetAllCharactersAsync().Result;
 
-            var gryffindor = client.GetCharactersFromHouse(HP_House.Gryffindor).Result;
-
-            Console.WriteLine($"Listing all characters in the house Gryffindor, Total items : {gryffindor.Count}");
-            foreach (var ch in gryffindor)
+            foreach (var item in r)
             {
-                Console.WriteLine(ch.Name);
+                Console.WriteLine(item.Name);
+            }
+            // Get all characters from a specific house
+            var FromHouse = HpConnection.GetCharactersFromHouse(HPHouse.Hufflepuff).Result;
+
+            foreach (var item in FromHouse)
+            {
+                Console.WriteLine(item.Name);
             }
         }
     }

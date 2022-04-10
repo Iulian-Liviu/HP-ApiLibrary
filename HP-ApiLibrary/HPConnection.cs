@@ -1,132 +1,110 @@
-﻿using HP_ApiLibrary.Model;
-using RestSharp;
+﻿using HPApiLibrary.Model;
 
-namespace HP_ApiLibrary
+namespace HPApiLibrary
 {
     public class HPConnection
     {
-        private static readonly HPConnection instance = new();
-        private readonly string Base_Url = "https://hp-api.herokuapp.com/api/characters";
-        private readonly string Base_Url_Staff = "http://hp-api.herokuapp.com/api/characters/staff";
-        private readonly string Base_Url_Students = "http://hp-api.herokuapp.com/api/characters/students";
-        private readonly string Base_Url_Houses = "https://hp-api.herokuapp.com/api/characters/house/";
-
-        private HPConnection()
+        // Private fields for Api Urls
+        private static class HpApiUris
         {
+            public static readonly Uri CharactersUri = new Uri("https://hp-api.herokuapp.com/api/characters");
+            public static readonly Uri StaffUri = new Uri("http://hp-api.herokuapp.com/api/characters/staff");
+            public static readonly Uri StudentsUri = new Uri("http://hp-api.herokuapp.com/api/characters/students");
+        }
+
+        // Private fields for Houses
+        private static class HpApiHouseUri
+        {
+            public static readonly Uri Gryffindor = new Uri("https://hp-api.herokuapp.com/api/characters/house/gryffindor");
+            public static readonly Uri Hufflepuff = new Uri("https://hp-api.herokuapp.com/api/characters/house/hufflepuff");
+            public static readonly Uri Slytherin = new Uri("https://hp-api.herokuapp.com/api/characters/house/slytherin");
+            public static readonly Uri Ravenclaw = new Uri("https://hp-api.herokuapp.com/api/characters/house/ravenclaw");
 
         }
 
-        public static HPConnection getInstance()
+        // No more RestSharp
+        private readonly HttpClient httpClient = new HttpClient();
+        /// <summary>
+        /// Takes an Uri and returns results if is an error throws and Exception
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        private async Task<List<CharactersResults>> GetResults(Uri uri)
         {
-            return instance;
+            try
+            {
+                string json = await httpClient.GetStringAsync(uri);
+                return CharactersResults.FromJson(json);
+            }
+            catch (HttpRequestException e)
+            {
+                // It good to throw here ?
+                throw new Exception("The following error has been catched : " + e.Message);
+            }
         }
 
+        private async Task<List<CharactersResults>> GetAllCharactersFromHouseAsync(Uri houseUri)
+        {
+            return await GetResults(houseUri);
+        }
+
+        /// <summary>
+        /// Get all characters async 
+        /// </summary>
+        /// <returns>List<CharactersResults></returns>
         public async Task<List<CharactersResults>> GetAllCharactersAsync()
         {
-            using RestClient? client = new(Base_Url);
-            RestRequest? request = new();
-
-            RestResponse response = await client.GetAsync(request);
-
-            if (response.IsSuccessful)
-            {
-                List<CharactersResults> charactersResults = CharactersResults.FromJson(response.Content);
-                return charactersResults;
-            }
-            else
-            {
-                client.Dispose();
-                throw new Exception("Data not found!");
-            }
-            throw new Exception("Out of service!");
+            return await GetResults(HpApiUris.CharactersUri);
         }
+        /// <summary>
+        /// Get the students async 
+        /// </summary>
+        /// <returns>List<CharactersResults></returns>
         public async Task<List<CharactersResults>> GetAllStudentsAsync()
         {
-            using RestClient? client = new(Base_Url_Students);
-            RestRequest? request = new();
-
-            RestResponse response = await client.GetAsync(request);
-
-            if (response.IsSuccessful)
-            {
-                List<CharactersResults> charactersResults = CharactersResults.FromJson(response.Content);
-                return charactersResults;
-            }
-            else
-            {
-                client.Dispose();
-                throw new Exception("Data not found!");
-            }
-            throw new Exception("Out of service!");
+            return await GetResults(HpApiUris.StudentsUri);
         }
-
-
+        /// <summary>
+        /// Get the staffs async 
+        /// </summary>
+        /// <returns>List<CharactersResults></returns>
         public async Task<List<CharactersResults>> GetAllCharactersStaffAsync()
         {
-            using RestClient? client = new(Base_Url_Staff);
-            RestRequest? request = new();
+            return await GetResults(HpApiUris.StaffUri);
+        }
+        /// <summary>
+        /// Get characters based on their House 
+        /// </summary>
+        /// <param name="House"></param>
+        /// <returns></returns>
+        public async Task<List<CharactersResults>> GetCharactersFromHouse(HPHouse House)
+        {
+            List<CharactersResults> results = new List<CharactersResults>();
 
-            RestResponse response = await client.GetAsync(request);
-
-            if (response.IsSuccessful)
+            if (House == HPHouse.Hufflepuff)
             {
-                List<CharactersResults> charactersResults = CharactersResults.FromJson(response.Content);
-                return charactersResults;
+                return await GetAllCharactersFromHouseAsync(HpApiHouseUri.Hufflepuff);
+            }
+            else if (House == HPHouse.Ravenclaw)
+            {
+                results = await GetAllCharactersFromHouseAsync(HpApiHouseUri.Ravenclaw);
+                return results;
+            }
+            else if (House == HPHouse.Gryffindor)
+            {
+                results = await GetAllCharactersFromHouseAsync(HpApiHouseUri.Gryffindor);
+                return results;
+            }
+            else if (House == HPHouse.Slytherin)
+            {
+                results = await GetAllCharactersFromHouseAsync(HpApiHouseUri.Slytherin);
+                return results;
             }
             else
             {
-                client.Dispose();
-                throw new Exception("Data not found!");
+                return new List<CharactersResults>();
             }
-            throw new Exception("Out of service!");
-        }
-        private async Task<List<CharactersResults>> GetAllCharactersFromHouseAsync(string house)
-        {
-            using RestClient? client = new(Base_Url_Houses + house);
-            RestRequest? request = new();
-
-            RestResponse response = await client.GetAsync(request);
-
-            if (response.IsSuccessful)
-            {
-                List<CharactersResults> charactersResults = CharactersResults.FromJson(response.Content);
-                return charactersResults;
-            }
-            else
-            {
-                client.Dispose();
-                throw new Exception("Data not found!");
-            }
-            throw new Exception("Out of service!");
-        }
-
-        public async Task<List<CharactersResults>> GetCharactersFromHouse(HP_House House)
-        {
-            var results = new List<CharactersResults>();
-
-            if (House == HP_House.Hufflepuff)
-            {
-                results = await GetAllCharactersFromHouseAsync("hufflepuff");
-                return results;
-            }
-            else if (House == HP_House.Slytherin)
-            {
-                results = await GetAllCharactersFromHouseAsync("slytherin");
-                return results;
-            }
-            else if (House == HP_House.Gryffindor)
-            {
-                results = await GetAllCharactersFromHouseAsync("gryffindor");
-                return results;
-            }
-            else if (House == HP_House.Slytherin)
-            {
-                results = await GetAllCharactersFromHouseAsync("slytherin");
-                return results;
-            }
-            ///returing gryffindor by default
-            results = await GetAllCharactersFromHouseAsync("gryffindor");
-            return results;
         }
 
     }

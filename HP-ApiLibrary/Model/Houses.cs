@@ -1,6 +1,6 @@
-﻿namespace HP_ApiLibrary.Model
+﻿namespace HPApiLibrary.Model
 {
-    public enum HP_House
+    public enum HPHouse
     {
         /*Gryffindor, Hufflepuff, Ravenclaw, and Slytherin*/
 

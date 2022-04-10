@@ -10,39 +10,24 @@ Is just an library that i made to learn to make wrapper and learn more, if you t
 ### Example 
 
 ```csharp
-internal class MyClass
-{
-    public static void Main()
-    {
-        // follows singleton (I thinks so!)
-
-        
-        HPConnection? client = HPConnection.getInstance();
-        var results = client.GetAllCharactersAsync().Result;
-       
-        Console.WriteLine($"Writing out : {results.Count} characters names");
-
-        foreach (var ch in results)
+public static void Main()
         {
-            Console.WriteLine(ch.Name);
-        }
-        
-        //Uses Enums for setting the house search 
-        var gryffindor = client.GetCharactersFromHouse(HP_House.Gryffindor).Result;
+            //Creates the connection 
+            HPConnection HpConnection = new HPConnection();
 
-        Console.WriteLine($"Listing all characters in the house Gryffindor, Total items : {gryffindor.Count}");
-        foreach (var ch in gryffindor)
-        {
-            Console.WriteLine(ch.Name);
-        }
-        // it should throw any exception but it dosen't know so use try/catch
-        try{
-        
-        }
+            // Get all Characters from the movie
+            var r = HpConnection.GetAllCharactersAsync().Result;
 
-        catch(Exception e){
+            foreach (var item in r)
+            {
+                Console.WriteLine(item.Name);
+            }
+            // Get all characters from a specific house
+            var FromHouse = HpConnection.GetCharactersFromHouse(HPHouse.Hufflepuff).Result;
 
+            foreach (var item in FromHouse)
+            {
+                Console.WriteLine(item.Name);
+            }
         }
-    }
-}
 ```	
