@@ -5,6 +5,10 @@ A simple wrapper made for [HP-API!](https://hp-api.herokuapp.com/) thanks [Edin 
 Is just an library that i made to learn to make wrapper and learn more, if you think i did something wrong make a PR 
 
 Note : Depends on Newtonsoft.Json to work! 
+
+I designed the first time the library with .NET 6 but i realized it won't work on Xamarin Fomrs
+so I switched to .NET Standard 2.1, the version 1.0.3 will support only .NET Standard
+
 ## Need Code Reviews 
 
 Tweet me at [Twitter](https://twitter.com/ICotcariu)
