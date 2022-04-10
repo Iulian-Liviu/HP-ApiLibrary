@@ -7,6 +7,8 @@ Is just an library that i made to learn to make wrapper and learn more, if you t
 Note : Depends on Newtonsoft.Json to work! 
 ## Need Code Reviews 
 
+Tweet me at [Twitter](https://twitter.com/ICotcariu)
+
 ### Nuget
 
 It's on Nuget [Get It](https://www.nuget.org/packages/HP-ApiLibrary/1.0.2)
