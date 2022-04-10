@@ -1,5 +1,5 @@
 ﻿using HPApiLibrary;
-using HPApiLibrary.Model;
+using HPApiLibrary.Helpers;
 
 namespace HP_ApiDemo
 {

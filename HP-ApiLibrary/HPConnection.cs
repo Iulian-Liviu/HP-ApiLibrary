@@ -1,4 +1,4 @@
-﻿using HPApiLibrary.Model;
+﻿using HPApiLibrary.Helpers;
 
 namespace HPApiLibrary
 {

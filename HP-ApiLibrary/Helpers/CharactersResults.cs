@@ -6,7 +6,7 @@
 //
 //    var charactersResults = CharactersResults.FromJson(jsonString);
 
-namespace HPApiLibrary.Model
+namespace HPApiLibrary.Helpers
 {
     using System;
     using System.Collections.Generic;
@@ -127,12 +127,12 @@ namespace HPApiLibrary.Model
 
     public partial class CharactersResults
     {
-        public static List<CharactersResults> FromJson(string json) => JsonConvert.DeserializeObject<List<CharactersResults>>(json, HPApiLibrary.Model.Converter.Settings);
+        public static List<CharactersResults> FromJson(string json) => JsonConvert.DeserializeObject<List<CharactersResults>>(json, HPApiLibrary.Helpers.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this List<CharactersResults> self) => JsonConvert.SerializeObject(self, HPApiLibrary.Model.Converter.Settings);
+        public static string ToJson(this List<CharactersResults> self) => JsonConvert.SerializeObject(self, HPApiLibrary.Helpers.Converter.Settings);
     }
 
     internal static class Converter

@@ -1,4 +1,4 @@
-﻿namespace HPApiLibrary.Model
+﻿namespace HPApiLibrary.Helpers
 {
     public enum HPHouse
     {
