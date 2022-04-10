@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32317.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HP-ApiLibrary", "HP-ApiLibrary\HP-ApiLibrary.csproj", "{C5F8CE50-424C-450C-981D-C72038C7E325}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HP-ApiDemo", "HP-ApiDemo\HP-ApiDemo.csproj", "{E63581AC-822F-405E-AB34-0E2AC49722C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HP-ApiLibrary", "HP-ApiLibrary\HP-ApiLibrary.csproj", "{BE33FF1C-C054-4B88-9539-6877BB7CF8F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5F8CE50-424C-450C-981D-C72038C7E325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5F8CE50-424C-450C-981D-C72038C7E325}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5F8CE50-424C-450C-981D-C72038C7E325}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5F8CE50-424C-450C-981D-C72038C7E325}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E63581AC-822F-405E-AB34-0E2AC49722C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E63581AC-822F-405E-AB34-0E2AC49722C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E63581AC-822F-405E-AB34-0E2AC49722C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E63581AC-822F-405E-AB34-0E2AC49722C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE33FF1C-C054-4B88-9539-6877BB7CF8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE33FF1C-C054-4B88-9539-6877BB7CF8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE33FF1C-C054-4B88-9539-6877BB7CF8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE33FF1C-C054-4B88-9539-6877BB7CF8F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {65801E7D-47BF-47A6-BB84-13F9DC09FF6D}
+		SolutionGuid = {6A9CA67F-3FEF-4794-BA6F-703FA61B4E67}
 	EndGlobalSection
 EndGlobal
