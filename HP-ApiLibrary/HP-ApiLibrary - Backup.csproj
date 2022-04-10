@@ -14,8 +14,8 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>wrapper. api, library</PackageTags>
 		<PackageReleaseNotes>Need Newtonsoft.Json to properly work</PackageReleaseNotes>
-		<PackageId>HP-ApiLibrary</PackageId>
-		<Version>1.0.2</Version>
+		<PackageId>$HP.ApiLibrary</PackageId>
+		<Version>1.0.1</Version>
 		<Authors>Julian</Authors>
 		<Company>Iulian-Liviu#3173</Company>
 	</PropertyGroup>
@@ -28,9 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1">
-			<IncludeAssets>All</IncludeAssets>
-		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 
 </Project>

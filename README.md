@@ -4,8 +4,12 @@ A simple wrapper made for [HP-API!](https://hp-api.herokuapp.com/) thanks [Edin 
 
 Is just an library that i made to learn to make wrapper and learn more, if you think i did something wrong make a PR 
 
-
+Note : Depends on Newtonsoft.Json to work! 
 ## Need Code Reviews 
+
+### Nuget
+
+It's on Nuget [Get It](https://www.nuget.org/packages/HP-ApiLibrary/1.0.2)
 
 ### Example 
 
