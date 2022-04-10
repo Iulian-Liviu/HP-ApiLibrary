@@ -15,7 +15,9 @@ Tweet me at [Twitter](https://twitter.com/ICotcariu)
 
 ### Nuget
 
-It's on Nuget [Get It](https://www.nuget.org/packages/HP-ApiLibrary/1.0.2)
+It's on Nuget Version 1.0.2 .NET 6 [Get It](https://www.nuget.org/packages/HP-ApiLibrary/1.0.2)
+
+.NET Standard []()
 
 ### Example 
 
