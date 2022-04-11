@@ -6,7 +6,7 @@ Is just an library that i made to learn to make wrapper and learn more, if you t
 
 Note : Depends on Newtonsoft.Json to work! 
 
-I designed the first time the library with .NET 6 but i realized it won't work on Xamarin Fomrs
+I designed the first time the library with .NET 6 but i realized it won't work on Xamarin Forms
 so I switched to .NET Standard 2.1, the version 1.0.3 will support only .NET Standard
 
 ## Need Code Reviews 
@@ -17,7 +17,7 @@ Tweet me at [Twitter](https://twitter.com/ICotcariu)
 
 It's on Nuget Version 1.0.2 .NET 6 [Get It](https://www.nuget.org/packages/HP-ApiLibrary/1.0.2) and this means no support
 
-.NET Standard []()
+.NET Standard [.NET Standard](https://www.nuget.org/packages/HP-ApiLibrary/)
 
 ### Example 
 
